@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvAgreabilite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agreabilite" />
+
+    <TextView
+        android:id="@+id/tvIntensite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Intensite" />
+
+    <TextView
+        android:id="@+id/tvImpression"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Impression" />
+
+    <TextView
+        android:id="@+id/tvUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User" />
+
+    <TextView
+        android:id="@+id/tvTelephone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telephone" />
+
+    <TextView
+        android:id="@+id/tvVibration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vibration" />
+</LinearLayout>

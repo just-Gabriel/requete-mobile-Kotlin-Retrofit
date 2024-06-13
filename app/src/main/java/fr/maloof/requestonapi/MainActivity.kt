@@ -5,6 +5,7 @@ package fr.maloof.requestonapi
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
 import retrofit2.Callback
@@ -16,7 +17,10 @@ class MainActivity : AppCompatActivity() {
 
 
     // URL de l'API mais le bon!!!!!!!!
-    private val BASE_URL = "http://localhost:8000/api/"
+    //private val BASE_URL = "http://localhost:8000/api/"
+
+
+
     private val TAG: String = "CHECK_RESPONSE"
     private lateinit var recyclerView: RecyclerView
 
@@ -26,25 +30,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        // ******************   OUBLI PAS D' APPELER LES FONCTIONSSSSSSS *******************
+
+
         getAllExperiences()
-
-
-        // Pour créer une nouvelle expérience
-
-       /*val newExperience = Experience(
-            id = 0,
-            agreabilite = 5,
-            intensite = 5,
-            impression = "Top",
-            user = "/api/users/4",
-            telephone = "/api/telephones/1",
-            vibration = "/api/vibrations/2"
-        )
-        createExperience(newExperience) */
-
-        // Pour supprimer une expérience avec l'ID 1
-
         // deleteExperience(1)
+        //createExperience()
+
+
+
     }
 
     private fun getAllExperiences() {
@@ -79,8 +76,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun createExperience(experience: Experience) {
+        val url = "http://192.168.1.3:8000/api/"
         val api = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(url)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(MyRetrofit::class.java)
@@ -101,8 +99,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun deleteExperience(id: Int) {
+        val url = "http://192.168.1.3:8000/api/"
         val api = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(url)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(MyRetrofit::class.java)
